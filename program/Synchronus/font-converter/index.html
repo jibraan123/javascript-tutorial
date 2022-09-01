@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font converter</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Noto+Serif+HK&family=Qwitcher+Grypen:wght@700&family=Roboto:ital@1&display=swap");
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Font Converter </h1>
+        <form onsubmit="changeFont(event)">
+                 <p> <label for="headlable">Enter your Text Here : </label></p>
+            <textarea 
+            id="w3review"
+             name="w3review"
+              rows="4"
+               cols="50" 
+               placeholder="Enter the text here"> 
+              </textarea><br><br>
+            <label for="cars">Choose a Font family:</label>
+
+<select name="fonts" id="fonts">
+  <option value="'Roboto', sans-serif">Roboto</option>
+  <option value="'Noto Serif HK', serif">Noto Serif Hong Kong</option>
+  <option value="'Qwitcher Grypen', cursive">Qwitcher Grypen</option>
+  <option value="'Alumni Sans Collegiate One', sans-serif">Alumni Sans Collegiate One</option>
+</select> <br> <br>
+
+            <input type="submit" value="Submit">
+          </form>
+          <br>
+          <br>
+          <textarea id = "newtext">     
+          </textarea>
+    </div>
+    <footer>
+        <a href="https://codeforindia.com/" target="_blank">Code For India</a>
+        <br>
+        &copy;copyrights. All Rights Reserved
+        <span id = "date"> </span>
+
+    </footer>
+</body>
+<script>
+  document.getElementById("date").innerText = new Date().getFullYear();
+    function changeFont(event) {
+      //Prevents the page from Reloading
+      event.preventDefault();
+
+      //Getting Input from User Text Area
+      let text = document.getElementById("textinput").value;
+      console.log(text);
+
+      //Getting Font Name form Select Drop Down Menu
+      let fontname = document.getElementById("fonts").value;
+      console.log(fontname);
+
+      //This is the Element that has the Output Text Area
+      let formattedText = document.getElementById("newtext");
+    
+      console.log(formattedText);
+      //Changing Text of Output Text Area
+      formattedText.innerText = text;
+
+      //adding a font Style for the Output Text Area Tag
+      formattedText.style.fontFamily = fontname;
+      }
+</script>
+</html>
+
